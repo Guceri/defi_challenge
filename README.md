@@ -11,6 +11,7 @@ truffle migrate --network ropsten --reset
 4. Manually transfer link token to the smart contract and eth to the smart contract (via metamask on the ropsten network).<br>
 [Link faucet ](https://ropsten.chain.link/)<br>
 [ETH faucet ](https://faucet.ropsten.be/)
+5. Update the .env file with the specific account and api details needed and delete the "_sample" ending
 6. Run the following code in your terminal within the project directory:
 ```
 node index.js
