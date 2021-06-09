@@ -20,7 +20,7 @@ contract Swap {
     address [] memory uni_path = new address[](2);
     uni_path[0] = _tokenA;
     uni_path[1] = _tokenB;
-    uint amountOutMin = 0;
+    uint amountOutMin = 0;//accept any slippage - applies to second swap as well
     uint uni_deadline = block.timestamp + 60;
     //swap token A for Token B on uniswap
     uniswap.swapExactTokensForTokens(
