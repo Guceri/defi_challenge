@@ -14,7 +14,7 @@ contract Swap {
     sushiswap = IUniswapV2Router02(_sushiswap);
   }
 
-  function swapTrade (address _tokenA, address _tokenB, uint uni_amountIn) public {
+  function swapRoundTrip (address _tokenA, address _tokenB, uint uni_amountIn) public {
     //approve token A to be sent to uniswap
     IERC20(_tokenA).approve(address(uniswap), uni_amountIn);
     address [] memory uni_path = new address[](2);
@@ -52,6 +52,7 @@ contract Swap {
 
   }
 
+  //used for the smart contract to receive ETH
   receive () external payable {}
 
 }

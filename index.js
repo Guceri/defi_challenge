@@ -26,7 +26,7 @@ async function callContract(){
     gasPrice: web3.utils.toWei(gasPrice, 'Gwei'),
     from: account
   }
-  const trade = await swap.methods.swapTrade(Link_Address, WETH_Address, token_trade_amount).send(settings).on('transactionHash', (hash => {
+  const trade = await swap.methods.swapRoundTrip(Link_Address, WETH_Address, token_trade_amount).send(settings).on('transactionHash', (hash => {
     console.log('Transaction Hash: ' + hash)
   }))
 }
