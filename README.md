@@ -23,3 +23,6 @@ While this is not technically correct in what was asked, I have tried to make th
 
 The code currently takes link token and sells it on uniswap for weth.  It will then take the weth back to uniswap and get link again.  Below is a screen shot of the smart contract doing this:
 ![](swap.png)
+
+## Limitations
+The code is limited in its functionality mainly to just demonstrate a "working" smart contract that does multiple swaps.  The reality is that you will want more control with how much you get back (aka slippage), and need to check the impact your trades will make on both pools BEFORE you make the trade, and then set your slippage to not exceed the expected price that is supposed to be received. This needs to be done "off chain" in your script.  An example is [here](https://github.com/Guceri/UniswapV2/blob/master/ropsten.js#L155)
