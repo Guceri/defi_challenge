@@ -31,14 +31,16 @@ contract Swap {
       uni_deadline
     );
    
+    //how much we got back from the 1st swap will be used in the second swap
     uint sushi_amountIn = IERC20(_tokenB).balanceOf(address(this));
-
+    //NOTE: this should be giving approval to sushiswap instead
     IERC20(_tokenB).approve(address(uniswap), sushi_amountIn);
     address [] memory sushi_path = new address[](2);
     sushi_path[0] = _tokenB;
     sushi_path[1] = _tokenA;
     uint sushi_deadline = block.timestamp + 60;
     //swap token B for Token A on sushiswap
+    //NOTE: this should be posted to sushiswap instead
     uniswap.swapExactTokensForTokens(
       sushi_amountIn,
       amountOutMin,
