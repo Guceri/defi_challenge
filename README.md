@@ -30,6 +30,6 @@ The code currently takes link token and sells it on uniswap for weth.  It will t
 ## Limitations
 The code is limited in its functionality mainly to just demonstrate a "working" smart contract that does multiple swaps.  The reality is that you will want more control with how much you get back (aka slippage), and need to check the impact your trades will make on both pools BEFORE you make the trade, and then set your slippage to not exceed the expected price that is supposed to be received. This needs to be done "off chain" in your script.  An example is [here](https://github.com/Guceri/UniswapV2/blob/master/ropsten.js#L155)
 
-##Extras
-I would make the function ownable to add an extra layer of security.  A Withdraw function would be good as well to pull funds out of the smart contract back to the "owner" address. Since they were not specified, I just left them out. 
+## Extras
+I would make the contract functions ownable.  A withdraw function would be need to remove funds from the smart contract as well. Since they were not specified, I just left them out. 
 
